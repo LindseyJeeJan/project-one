@@ -1,6 +1,69 @@
 /* Element styles */
+body, main {
+    height: 100%;
+}
+
+button {
+  transition: background-color 0.1s ease-out;
+}
+
+main {
+    display: flex;
+    align-items: stretch;
+}
+
+.site-container, .offsite-container{
+    flex: 1 1 0;
+    height: 100%;
+}
 
 /* Class styles */
+.offsite-container {
+    position: absolute;
+    top: 0;
+    width: 25rem;
+    left: -25rem;
+    background-color: #f0f0f0;
+}
+
+.offsite-is-open .offsite-container,
+.offsite-is-open .site-container {
+  transform: translateX(25rem);
+}
+
+.site-container , .offsite-container{
+  transition: transform 0.1s ease-out;
+}
+
+/* Class styles */
+.p-1{
+    padding: 5px;
+}
+
+.p-2{
+    padding: 10px;
+}
+
+.m-1 {
+    margin: 5px;
+}
+
+.m-2 {
+    margin: 10px;
+}
 
 /* Media queries */
+@media screen and (max-width: 768px) {
+    .offsite-container {
+        width: 100%;
+        left: 100%;
+    }
+    .offsite-is-open .site-container {
+        transform: translateX(100%);
+    }
 
+    .offsite-is-open .offsite-container{
+        transform: translateX(0rem);
+        left: 0;
+    }
+}
