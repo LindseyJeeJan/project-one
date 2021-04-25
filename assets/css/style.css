@@ -12,12 +12,23 @@ main {
     align-items: stretch;
 }
 
+input[type=text].browser-default {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.results-page nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Class styles */
 .site-container, .offsite-container{
     flex: 1 1 0;
     height: 100%;
 }
 
-/* Class styles */
 .offsite-container {
     position: absolute;
     top: 0;
@@ -31,8 +42,76 @@ main {
   transform: translateX(25rem);
 }
 
+.card.results-card{
+    border: 1px solid #000;
+    text-align: right;
+    padding: 10px;
+}
+
+.card.results-card .card-title, .create-date{
+    font-size: 1rem;
+    line-height: 1.4;
+    display: block;
+    text-align: center;
+}
+
+.card.results-card {
+    display: flex;
+    align-content: stretch;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.card.results-card div:last-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+}
+
+.card.results-card h5{
+    text-align: center;
+    margin-top: 0;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.create-date{
+    font-weight: bold;
+    line-height: 1.8;
+}
+
 .site-container , .offsite-container{
   transition: transform 0.1s ease-out;
+}
+
+.side-container {
+    font-size: 1rem;
+    display: inline-block;
+    text-align: center;
+    float: left;
+    clear: left;
+    background: #f0f0f0;
+    width: 70px;
+    height: 60px;
+    vertical-align: middle;
+    margin-bottom: 1px;
+    border-radius: 0 6px 6px 0;
+    margin-left: -10px;
+    padding: 10px 0;
+}
+
+.side-container span{
+    display: block;
+    padding-top: 5px;
+}
+
+.icon, .far {
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Class styles */
@@ -50,6 +129,12 @@ main {
 
 .m-2 {
     margin: 10px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 /* Media queries */
