@@ -7,6 +7,10 @@ button {
   transition: background-color 0.1s ease-out;
 }
 
+button, button > * {
+  cursor: pointer;
+}
+
 main {
     display: flex;
     align-items: stretch;
@@ -109,7 +113,7 @@ input[type=text].browser-default {
     padding-top: 5px;
 }
 
-.icon, .fa-bookmark {
+.icon, .icon .fa-bookmark {
     font-size: 1.5rem;
     cursor: pointer;
 }

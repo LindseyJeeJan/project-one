@@ -1,5 +1,17 @@
+var bookmarkButton = $('#bookmark-panel');
+var bookmarkClose =  $('#bookmark-close');
 var pageContainer = $('#site-container');
 var searchForm = $('#search-form');
+var body = $('body');
+
+// Bookmark panel toggle
+bookmarkButton.on('click', function(event) {
+     body.toggleClass('offsite-is-open');
+});
+
+bookmarkClose.on('click', function(event) {
+     body.toggleClass('offsite-is-open');
+});
 
 function getParametersFromURL() {
   // Get the search params out of the URL (i.e. `?q=london&format=photo`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
