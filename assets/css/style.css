@@ -84,7 +84,7 @@ input[type=text].browser-default {
     line-height: 1.8;
 }
 
-.site-container , .offsite-container{
+.site-container, .offsite-container{
   transition: transform 0.1s ease-out;
 }
 
@@ -109,7 +109,7 @@ input[type=text].browser-default {
     padding-top: 5px;
 }
 
-.icon, .far {
+.icon, .fa-bookmark {
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -129,12 +129,6 @@ input[type=text].browser-default {
 
 .m-2 {
     margin: 10px;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
 }
 
 /* Media queries */

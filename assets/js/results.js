@@ -24,15 +24,20 @@ function searchApi(queryTerms) {
         return response.json();
     })
     .then(function (data) {
-        console.log(data);
-        // Loop through the response
+        renderArticleResultsCards(data);
+    })
+}
+
+// Render search results for Stack Overflow 
+function renderArticleResultsCards(results){
+ // Loop through the response
         for (var i = 0; i < 3; i++) {
             // Get data object data
-            var question = data.items[i].title;
-            var link = data.items[i].link;
-            var answers = data.items[i].answer_count;
-            var views = data.items[i].view_count;
-            var createDate = data.items[i].creation_date;
+            var question = results.items[i].title;
+            var link = results.items[i].link;
+            var answers = results.items[i].answer_count;
+            var views = results.items[i].view_count;
+            var createDate = results.items[i].creation_date;
             // Format the date created
             var createDateFormatted = moment.unix(createDate).format("MM/DD/YYYY");
             // Render HTML elements to display 
@@ -67,7 +72,6 @@ function searchApi(queryTerms) {
             //  Assemble card
             pageContainer.append(questionCard);
         } 
-    })
 }
 
 // When form is submited on this page, send search terms to the API call
@@ -82,6 +86,14 @@ function handleSearchFormSubmit(event) {
 //   Make API call
   searchApi(searchValue);
 }
+
+// Bookmark event listener 
+pageContainer.on('click', '.icon', function(event){
+    var icon = $(this).find('i');
+    var isBookmark = icon.hasClass('fas'); 
+    icon.removeClass('fas far').addClass(isBookmark ? 'far' : 'fas');
+});
+
 // Search form submit event listener
 searchForm.on('submit', handleSearchFormSubmit);
 
