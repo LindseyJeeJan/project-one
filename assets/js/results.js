@@ -1,4 +1,4 @@
-var stackExchangeRequestUrl = 'https://api.stackexchange.com/2.2/questions?pagesize=10&tagged=json&site=stackoverflow';
+var stackExchangeRequestUrl = 'https://api.stackexchange.com/2.2/questions?pagesize=3&tagged=json&site=stackoverflow';
 var pageContainer = $('#site-container');
 var searchButton = $('#btn-search');
 
@@ -9,7 +9,7 @@ searchButton.on('click', function(event) {
     })
     .then(function (data) {
         // Loop through the response
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 3; i++) {
             // Get data object data
             var question = data.items[i].title;
             var link = data.items[i].link;
@@ -49,7 +49,6 @@ searchButton.on('click', function(event) {
             questionCard.append(div).append(div2).append(div3);
             //  Assemble card
             pageContainer.append(questionCard);
-
         } 
     });
 });
