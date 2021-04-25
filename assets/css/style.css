@@ -12,12 +12,23 @@ main {
     align-items: stretch;
 }
 
+input[type=text].browser-default {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.results-page nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Class styles */
 .site-container, .offsite-container{
     flex: 1 1 0;
     height: 100%;
 }
 
-/* Class styles */
 .offsite-container {
     position: absolute;
     top: 0;

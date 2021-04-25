@@ -1,13 +1,30 @@
-var stackExchangeRequestUrl = 'https://api.stackexchange.com/2.2/questions?pagesize=3&tagged=json&site=stackoverflow';
 var pageContainer = $('#site-container');
-var searchButton = $('#btn-search');
+var searchForm = $('#search-form');
 
-searchButton.on('click', function(event) {
+function getParametersFromURL() {
+  // Get the search params out of the URL (i.e. `?q=london&format=photo`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
+  var searchParamsArr = document.location.search.split('?');
+
+  // Get the query and format values
+  var query = searchParamsArr[1].split('=').pop();
+  // Make API call 
+  searchApi(query);
+}
+
+function searchApi(queryTerms) {
+    // Empty results
+    $('.card-question').remove();
+    // Add search terms from the URL
+
+    stackExchangeRequestUrl = 'https://api.stackexchange.com/2.2/search?pagesize=3&order=desc&sort=relevance&intitle=' + queryTerms + '&site=stackoverflow';
+    
+    // Stack Exchange API call
     fetch(stackExchangeRequestUrl)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
+        console.log(data);
         // Loop through the response
         for (var i = 0; i < 3; i++) {
             // Get data object data
@@ -20,7 +37,7 @@ searchButton.on('click', function(event) {
             var createDateFormatted = moment.unix(createDate).format("MM/DD/YYYY");
             // Render HTML elements to display 
             var questionHeader = $('<h5/>').text('Question');
-            var questionCard = $('<div class="card results-card" />');
+            var questionCard = $('<div class="card results-card card-question" />');
             var questionContainer = $('<span class="card-title" />');
             var createDateContainer = $('<span class="create-date" />');
             var answersContainer = $('<span class="side-container"/>');
@@ -50,5 +67,22 @@ searchButton.on('click', function(event) {
             //  Assemble card
             pageContainer.append(questionCard);
         } 
-    });
-});
+    })
+}
+
+// When form is submited on this page, send search terms to the API call
+function handleSearchFormSubmit(event) {
+  event.preventDefault();
+    //  Get input field contents
+  var searchValue = $('#search-input').val();
+    // If input is empty, do nothing
+  if (!searchValue) {
+    return;
+  }
+//   Make API call
+  searchApi(searchValue);
+}
+// Search form submit event listener
+searchForm.on('submit', handleSearchFormSubmit);
+
+getParametersFromURL();
