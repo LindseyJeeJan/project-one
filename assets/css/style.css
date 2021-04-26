@@ -114,8 +114,12 @@ input[type=text].browser-default {
 }
 
 .icon, .icon .fa-bookmark {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
+}
+
+.icon{
+   align-self: flex-end;
 }
 
 /* Class styles */
