@@ -8,15 +8,30 @@ button {
   transition: background-color 0.1s ease-out;
 }
 
+button, button > * {
+  cursor: pointer;
+}
+
 main {
   display: flex;
   align-items: stretch;
 }
 
-.site-container,
-.offsite-container {
+/* ID Styles */
+#site-description {
+  padding: 5rem;
+  background-color: #ebebeb;
+}
+
+#bookmarks {
+  padding: 5rem;
+}
+
+/* Class styles */
+.site-container {
   flex: 1 1 0;
   height: 100%;
+}
 
 input[type=text].browser-default {
     border: 1px solid #ccc;
@@ -29,43 +44,15 @@ input[type=text].browser-default {
     justify-content: space-between;
 }
 
-/* Class styles */
-.site-container, .offsite-container{
+.site-container{
     flex: 1 1 0;
     height: 100%;
-
-}
-
-.offsite-container {
-  position: absolute;
-  top: 0;
-  width: 25rem;
-  left: -25rem;
-  background-color: #f0f0f0;
-}
-
-.offsite-is-open .offsite-container,
-.offsite-is-open .site-container {
-  transform: translateX(25rem);
-}
-
-
-.site-container,
-.offsite-container {
-  transition: transform 0.1s ease-out;
 }
 
 .container {
   padding-top: 1rem;
   padding-bottom: 2rem;
 }
-#site-description {
-  padding: 5rem;
-  background-color: #ebebeb;
-}
-
-#bookmarks {
-  padding: 5rem;
 
 .card.results-card{
     border: 1px solid #000;
@@ -109,10 +96,6 @@ input[type=text].browser-default {
     line-height: 1.8;
 }
 
-.site-container , .offsite-container{
-  transition: transform 0.1s ease-out;
-}
-
 .side-container {
     font-size: 1rem;
     display: inline-block;
@@ -134,13 +117,16 @@ input[type=text].browser-default {
     padding-top: 5px;
 }
 
-.icon, .far {
-    font-size: 1.5rem;
+.icon, .icon .fa-bookmark {
+    font-size: 1.8rem;
     cursor: pointer;
 
 }
 
-/* Class styles */
+.icon{
+   align-self: flex-end;
+}
+
 .p-1 {
   padding: 5px;
 }
@@ -158,42 +144,22 @@ input[type=text].browser-default {
 }
 
 /*google icons */
-
 .material-icons.md-18 {
   font-size: 18px;
   text-align: center;
 }
+
 .material-icons.md-24 {
   font-size: 24px;
   text-align: center;
 }
+
 .material-icons.md-36 {
   font-size: 36px;
   text-align: center;
 }
+
 .material-icons.md-48 {
   font-size: 48px;
   text-align: center;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* Media queries */
-@media screen and (max-width: 768px) {
-  .offsite-container {
-    width: 100%;
-    left: 100%;
-  }
-  .offsite-is-open .site-container {
-    transform: translateX(100%);
-  }
-
-  .offsite-is-open .offsite-container {
-    transform: translateX(0rem);
-    left: 0;
-  }
 }

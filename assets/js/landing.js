@@ -1,16 +1,8 @@
-var bookmarkButton = $('#bookmark-panel');
-var bookmarkClose =  $('#bookmark-close');
 var searchForm = $('#search-form');
+var bookmarkPanel = $('#offsite-container');
 var body = $('body');
 
-// Bookmark panel toggle
-bookmarkButton.on('click', function(event) {
-     body.toggleClass('offsite-is-open');
-});
-
-bookmarkClose.on('click', function(event) {
-     body.toggleClass('offsite-is-open');
-});
+var bookmarks = [];
 
 // Send search field contents to results page in the URL
 function handleSearchFormSubmit(event) {
@@ -28,3 +20,15 @@ function handleSearchFormSubmit(event) {
 // Search form submit event
 searchForm.on('submit', handleSearchFormSubmit);
 
+function init() {
+    // Get bookmarks from localStorage
+    var storedBookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    // If bookmarks exist in localStorage, update the bookmarks array
+    if (storedBookmarks !== null) {
+        bookmarks = storedBookmarks;
+    }
+    // render bookmarks to the page
+   // renderBookmarks();
+}
+
+init();
