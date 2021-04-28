@@ -1,6 +1,7 @@
 /* Element styles */
-body, main {
-    height: 100%;
+body,
+main {
+  height: 100%;
 }
 
 button {
@@ -12,8 +13,23 @@ button, button > * {
 }
 
 main {
-    display: flex;
-    align-items: stretch;
+  display: flex;
+  align-items: stretch;
+}
+/* ID Styles */
+#site-description {
+  padding: 5rem;
+  background-color: #ebebeb;
+}
+
+#bookmarks {
+  padding: 5rem;
+}
+
+/* Class styles */
+.site-container {
+  flex: 1 1 0;
+  height: 100%;
 }
 
 input[type=text].browser-default {
@@ -27,10 +43,14 @@ input[type=text].browser-default {
     justify-content: space-between;
 }
 
-/* Class styles */
 .site-container{
     flex: 1 1 0;
     height: 100%;
+}
+
+.container {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 .card.results-card{
@@ -99,41 +119,43 @@ input[type=text].browser-default {
 .icon, .icon .fa-bookmark {
     font-size: 1.8rem;
     cursor: pointer;
+
 }
 
 .icon{
    align-self: flex-end;
 }
 
-/* Class styles */
-.p-1{
-    padding: 5px;
+.p-1 {
+  padding: 5px;
 }
 
-.p-2{
-    padding: 10px;
+.p-2 {
+  padding: 10px;
 }
 
 .m-1 {
-    margin: 5px;
+  margin: 5px;
 }
 
 .m-2 {
-    margin: 10px;
+  margin: 10px;
 }
 
-/* Media queries */
-@media screen and (max-width: 768px) {
-    .offsite-container {
-        width: 100%;
-        left: 100%;
-    }
-    .offsite-is-open .site-container {
-        transform: translateX(100%);
-    }
-
-    .offsite-is-open .offsite-container{
-        transform: translateX(0rem);
-        left: 0;
-    }
+/*google icons */
+.material-icons.md-18 {
+  font-size: 18px;
+  text-align: center;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+  text-align: center;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+  text-align: center;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+  text-align: center;
 }
