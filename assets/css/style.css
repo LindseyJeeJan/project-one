@@ -28,22 +28,9 @@ input[type=text].browser-default {
 }
 
 /* Class styles */
-.site-container, .offsite-container{
+.site-container{
     flex: 1 1 0;
     height: 100%;
-}
-
-.offsite-container {
-    position: absolute;
-    top: 0;
-    width: 25rem;
-    left: -25rem;
-    background-color: #f0f0f0;
-}
-
-.offsite-is-open .offsite-container,
-.offsite-is-open .site-container {
-  transform: translateX(25rem);
 }
 
 .card.results-card{
@@ -86,10 +73,6 @@ input[type=text].browser-default {
 .create-date{
     font-weight: bold;
     line-height: 1.8;
-}
-
-.site-container, .offsite-container{
-  transition: transform 0.1s ease-out;
 }
 
 .side-container {
