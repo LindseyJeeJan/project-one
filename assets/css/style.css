@@ -16,6 +16,7 @@ main {
   display: flex;
   align-items: stretch;
 }
+
 /* ID Styles */
 #site-description {
   padding: 5rem;
@@ -147,14 +148,17 @@ input[type=text].browser-default {
   font-size: 18px;
   text-align: center;
 }
+
 .material-icons.md-24 {
   font-size: 24px;
   text-align: center;
 }
+
 .material-icons.md-36 {
   font-size: 36px;
   text-align: center;
 }
+
 .material-icons.md-48 {
   font-size: 48px;
   text-align: center;
