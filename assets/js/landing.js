@@ -133,7 +133,7 @@ function init() {
     } else {
       var bookmarkMessage = $('<h5/>');
       bookmarkMessage.text('No bookmarks exist.');
-      pageContainer.append(bookmarkMessage);
+      bookmarkContainer.append(bookmarkMessage);
     }
     // render bookmarks to the page
    renderBookmarks();
