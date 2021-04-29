@@ -1,4 +1,4 @@
-var pageContainer = $('#site-container');
+var pageContainer = $('#results-container');
 var searchForm = $('#search-form');
 var body = $('body');
 
