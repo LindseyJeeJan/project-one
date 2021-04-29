@@ -144,11 +144,10 @@ input[type=text].browser-default {
 }
 
 .image-holder{
-  background: #ffffff url('../images/stackoverflow.png') no-repeat left top ;
+  background: #fff url('../images/stackoverflow.png') no-repeat left center;
   min-height: 200px;
   width: 100%;
-  background-size: cover;
-  background-position-y: -50px;
+  background-size: contain;
 }
 
 .p-1 {
