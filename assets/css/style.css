@@ -166,7 +166,7 @@ input.full-width{
 }
 
 .image-holder{
-  background: #fff url('../images/stackoverflow.png') no-repeat left center;
+  background: #fff url('../images/stackoverflow.png') no-repeat center center;
   min-height: 200px;
   width: 100%;
   background-size: contain;
