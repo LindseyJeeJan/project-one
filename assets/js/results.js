@@ -52,7 +52,7 @@ function renderArticleResultsCards(results){
             var answersNumber = $('<span class="answers"/>')
             var viewsContainer = $('<span class="side-container"/>');
             var viewsNumber = $('<span class="views" />');
-            var linkButton = $('<a class="btn" target="_blank" />');
+            var linkButton = $('<a class="btn purple darken-3" target="_blank" />');
             var favoriteIcon = $('<span class="icon"><i class="far fa-bookmark"></i></span>');
             var div = $('<div />');
             var div2 = $('<div />');

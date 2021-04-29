@@ -1,3 +1,6 @@
+:root {
+  --borderRadius: 20px;
+}
 /* Element styles */
 body,
 main {
@@ -36,7 +39,22 @@ main {
 input[type=text].browser-default {
     border: 1px solid #ccc;
     padding: 10px;
-    border-radius: 2px;
+    border-radius: var(--borderRadius);
+}
+
+input.full-width{
+  display: block;
+  width: 96%;
+  font-size: 1.5rem;
+  margin: 2%;
+}
+
+.btn{
+   border-radius: var(--borderRadius);
+}
+
+.landing-search{
+  text-align: center;
 }
 
 .results-page nav {

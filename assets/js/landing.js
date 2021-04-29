@@ -98,7 +98,7 @@ function renderBookmarks() {
             var questionCard = $('<div class="card results-card card-question medium" />');
             var questionContainer = $('<span class="card-title" />');
             var createDateContainer = $('<span class="create-date" />');
-            var linkButton = $('<a class="btn" target="_blank" />');
+            var linkButton = $('<a class="btn purple darken-3" target="_blank" />');
             var favoriteIcon = $('<span class="icon"><i class="fas fa-bookmark"></i></span>');
             var divWrapper = $('<div class="col s12 m4"/>');
             var div1 = $('<div class="image-holder" />');
