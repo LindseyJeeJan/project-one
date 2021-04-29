@@ -1,3 +1,6 @@
+:root {
+  --borderRadius: 20px;
+}
 /* Element styles */
 body,
 main {
@@ -36,12 +39,27 @@ main {
 input[type=text].browser-default {
     border: 1px solid #ccc;
     padding: 10px;
-    border-radius: 2px;
+    border-radius: var(--borderRadius);
+}
+
+input.full-width{
+  display: block;
+  width: 96%;
+  font-size: 1.5rem;
+  margin: 2%;
+}
+
+.btn{
+   border-radius: var(--borderRadius);
+}
+
+.landing-search{
+  text-align: center;
 }
 
 .results-page nav {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .site-container{
@@ -79,6 +97,15 @@ input[type=text].browser-default {
     padding: 10px;
 }
 
+.bookmarks .card.results-card {
+  flex-direction: column;
+}
+
+.bookmarks .card.medium{
+    height: auto;
+    min-height: 400px;
+}
+
 .card.results-card div:last-child{
     display: flex;
     flex-direction: column;
@@ -103,7 +130,6 @@ input[type=text].browser-default {
 
 .side-container {
     font-size: 1rem;
-    display: inline-block;
     text-align: center;
     float: left;
     clear: left;
@@ -125,11 +151,21 @@ input[type=text].browser-default {
 .icon, .icon .fa-bookmark {
     font-size: 1.8rem;
     cursor: pointer;
-
 }
 
 .icon{
    align-self: flex-end;
+}
+
+.bookmarks .icon{
+  float: right;
+}
+
+.image-holder{
+  background: #fff url('../images/stackoverflow.png') no-repeat left center;
+  min-height: 200px;
+  width: 100%;
+  background-size: contain;
 }
 
 .p-1 {
