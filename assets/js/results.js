@@ -108,9 +108,6 @@ pageContainer.on('click', '.icon', function(event){
         isVideo = true;
     } 
 
-    console.log(`is video ${isVideo}, is question ${isQuestion}`);
-    console.log(`is bookmark ${isBookmark}`);
-
     if (isQuestion){
       var questionDate = card.find('.create-date').text();
       var questionQuestion = card.find('.card-title').text();
@@ -135,12 +132,12 @@ pageContainer.on('click', '.icon', function(event){
                type: 'video'
             });
         } 
-       console.log('bookmarks', bookmarks);
+
     } else {
        if (isQuestion){
           // Return matching object from array bookmarks, get its index
           var getMatchingIndex = bookmarks.findIndex(x => x.qTitle === questionQuestion);
-          console.log('index', getMatchingIndex);
+
         } else {
           //  TODO: Return matching video from bookmarks array
         }
@@ -148,7 +145,6 @@ pageContainer.on('click', '.icon', function(event){
         if (getMatchingIndex > -1) {
           bookmarks.splice(getMatchingIndex, 1);
         }
-        console.log('bookmarks after splice', bookmarks);
     }
     
     //  push to local storage
