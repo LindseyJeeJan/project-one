@@ -1,6 +1,5 @@
 var pageContainer = $('#site-container');
 var searchForm = $('#search-form');
-var bookmarkPanel = $('#offsite-container');
 var body = $('body');
 
 var bookmarks = [];
@@ -95,9 +94,10 @@ function handleSearchFormSubmit(event) {
 pageContainer.on('click', '.icon', function(event){
     // toggle bookmark icon
     var icon = $(this).find('i');
+    //  determine if bookmark was added or removed
     var isBookmark = icon.hasClass('fas'); 
     icon.removeClass('fas far').addClass(isBookmark ? 'far' : 'fas');
-
+    
     // determine if video or question
     var isQuestion = false;
     var isVideo = false;
@@ -108,46 +108,55 @@ pageContainer.on('click', '.icon', function(event){
         isVideo = true;
     } 
 
-    if (isBookmark) {
-        // TODO: add item to array
-       
-    } else {
-        // TODO: remove item from array
-    }
-    //  TODO: push bookmarks to bookmarks array
+    console.log(`is video ${isVideo}, is question ${isQuestion}`);
+    console.log(`is bookmark ${isBookmark}`);
 
+    if (isQuestion){
+      var questionDate = card.find('.create-date').text();
+      var questionQuestion = card.find('.card-title').text();
+      var questionURL = card.find('a.btn').attr('href');
+      var questionAnswers = card.find('.answers').text();
+      var questionViews = card.find('.views').text();
+    }
+
+    if (!isBookmark) {
+        // Add item to array
+        if (isQuestion){
+            bookmarks.push({
+               type: 'question',
+               qDate: questionDate,
+               qTitle: questionQuestion,
+               qUrl:  questionURL,
+               qAnswers: questionAnswers,
+               qViews: questionViews
+            });
+        } else {
+           bookmarks.push({
+               type: 'video'
+            });
+        } 
+       console.log('bookmarks', bookmarks);
+    } else {
+       if (isQuestion){
+          // Return matching object from array bookmarks, get its index
+          var getMatchingIndex = bookmarks.findIndex(x => x.qTitle === questionQuestion);
+          console.log('index', getMatchingIndex);
+        } else {
+          //  TODO: Return matching video from bookmarks array
+        }
+        // Remove bookmark object that was clicked from array
+        if (getMatchingIndex > -1) {
+          bookmarks.splice(getMatchingIndex, 1);
+        }
+        console.log('bookmarks after splice', bookmarks);
+    }
+    
     //  push to local storage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-    renderBookmarks(); 
 
 });
-
-// TODO: Write bookmarks from storage to the page
-function renderBookmarks() {
-    // TODO write bookmarks to page
-
-     // TODO: First clear the display 
-
-      // Get search phrases from the array of objects and print them onto the page
-    for (var i = 0; i < bookmarks.length; i++) {
-      //   var bookmark = bookmarks[i];
-    }   
-}
-
 
 // Search form submit event listener
 searchForm.on('submit', handleSearchFormSubmit);
 
-function init() {
-    // Get bookmarks from localStorage
-    var storedBookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-    // If bookmarks exist in localStorage, update the bookmarks array
-    if (storedBookmarks !== null) {
-        bookmarks = storedBookmarks;
-    }
-    // render bookmarks to the page
-    renderBookmarks();
-}
-
-init();
 getParametersFromURL();
