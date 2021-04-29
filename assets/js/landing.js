@@ -1,6 +1,6 @@
 var pageContainer = $('#site-container');
 var searchForm = $('#search-form');
-var bookmarkContainer = $('#bookmarks');
+var bookmarkContainer = $('#bookmarks .row');
 var body = $('body');
 
 var bookmarks = [];
@@ -36,9 +36,6 @@ pageContainer.on('click', '.icon', function(event){
         isVideo = true;
     } 
 
-    console.log(`is video ${isVideo}, is question ${isQuestion}`);
-    console.log(`is bookmark ${isBookmark}`);
-
     if (isQuestion){
       var questionDate = card.find('.create-date').text();
       var questionQuestion = card.find('.card-title').text();
@@ -63,12 +60,11 @@ pageContainer.on('click', '.icon', function(event){
                type: 'video'
             });
         } 
-       console.log('bookmarks', bookmarks);
+
     } else {
        if (isQuestion){
           // Return matching object from array bookmarks, get its index
           var getMatchingIndex = bookmarks.findIndex(x => x.qTitle === questionQuestion);
-          console.log('index', getMatchingIndex);
         } else {
           //  TODO: Return matching video from bookmarks array
         }
@@ -76,7 +72,6 @@ pageContainer.on('click', '.icon', function(event){
         if (getMatchingIndex > -1) {
           bookmarks.splice(getMatchingIndex, 1);
         }
-        console.log('bookmarks after splice', bookmarks);
     }
     
     //  push to local storage
@@ -97,40 +92,29 @@ function renderBookmarks() {
             // Render question card
             var question = bookmark.qTitle;
             var link = bookmark.qUrl;
-            var answers = bookmark.qAnswers;
-            var views = bookmark.qViews;
             var createDate = bookmark.qDate;
 
             var questionHeader = $('<h5/>').text('Question');
-            var questionCard = $('<div class="card results-card card-question" />');
+            var questionCard = $('<div class="card results-card card-question medium" />');
             var questionContainer = $('<span class="card-title" />');
             var createDateContainer = $('<span class="create-date" />');
-            var answersContainer = $('<span class="side-container"/>');
-            var answersNumber = $('<span class="answers"/>')
-            var viewsContainer = $('<span class="side-container"/>');
-            var viewsNumber = $('<span class="views" />');
             var linkButton = $('<a class="btn" target="_blank" />');
             var favoriteIcon = $('<span class="icon"><i class="fas fa-bookmark"></i></span>');
-            var div = $('<div />');
+            var divWrapper = $('<div class="col s12 m4"/>');
+            var div1 = $('<div class="image-holder" />');
             var div2 = $('<div />');
             var div3 = $('<div />');
             //  Put data into the elements
             questionContainer.text(question);
             linkButton.text('View').attr('href', link);
-            answersContainer.text('Answers');
-            answersNumber.text(answers)
-            viewsContainer.text('Views');
-            viewsNumber.text(views);
-            viewsContainer.append(viewsNumber);
-            answersContainer.append(answersNumber);
             createDateContainer.text(createDate);
             //  Create structure
-            div.append(answersContainer).append(viewsContainer);
-            div2.append(questionHeader).append(createDateContainer).append(questionContainer);
-            div3.append(favoriteIcon).append(linkButton);
-            questionCard.append(div).append(div2).append(div3);
+            div2.append(favoriteIcon).append(questionHeader);
+            div3.append(createDateContainer).append(questionContainer);
+            questionCard.append(div2).append(div1).append(div3).append(linkButton);
+            divWrapper.append(questionCard);
             //  Assemble card
-            pageContainer.append(questionCard);
+            bookmarkContainer.append(divWrapper);
         } else {
 
         }
@@ -146,7 +130,6 @@ function init() {
     // If bookmarks exist in localStorage, update the bookmarks array
     if (storedBookmarks.length !== 0) {
         bookmarks = storedBookmarks;
-        console.log('bookmarks');
     } else {
       var bookmarkMessage = $('<h5/>');
       bookmarkMessage.text('No bookmarks exist.');

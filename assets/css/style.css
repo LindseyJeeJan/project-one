@@ -74,6 +74,15 @@ input[type=text].browser-default {
     padding: 10px;
 }
 
+.bookmarks .card.results-card {
+  flex-direction: column;
+}
+
+.bookmarks .card.medium{
+    height: auto;
+    min-height: 400px;
+}
+
 .card.results-card div:last-child{
     display: flex;
     flex-direction: column;
@@ -119,11 +128,22 @@ input[type=text].browser-default {
 .icon, .icon .fa-bookmark {
     font-size: 1.8rem;
     cursor: pointer;
-
 }
 
 .icon{
    align-self: flex-end;
+}
+
+.bookmarks .icon{
+  float: right;
+}
+
+.image-holder{
+  background: #ffffff url('../images/stackoverflow.png') no-repeat left top ;
+  min-height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-position-y: -50px;
 }
 
 .p-1 {
