@@ -86,7 +86,7 @@ function renderArticleResultsCards(results) {
 
 function searchVApi(queryTerms) {
   $("#videos-container").empty()
-  $.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=' + queryTerms + '&key=AIzaSyDfQfEVK8-H_6dMmoC5Z94bXnuYF6A6lT8&type=video', function (data) {
+  $.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=' + queryTerms + '&key=AIzaSyDfwUr06BwJXQcP1lmtgVxsef7OrLreKgs&type=video', function (data) {
     console.log(data)
 
 
