@@ -93,15 +93,15 @@ function searchVApi(queryTerms) {
     data.items.forEach(item => {
 
       var str = item.snippet.title;
-      var title = str.substr(0, 23);
+      var title = str.substr(0, 30);
 
       var vidCard = $('<div class = "col s12 m4 l4" />');
       var sizeCard = $('<div class = "card medium hoverable video-results" />');
       var vidCont = $('<div class = "video-container"> <iframe width ="420" height ="315"src="https://www.youtube.com/embed/' + item.id.videoId + '/frameborder="0" allowfullscreen></iframe> ');
-      var cardCont = $('<div class = "card-content">  <div class = "row title-row"> <h6 class="card-title truncate">' + title + '</h6>  <div class ="bookmarks"> <span class="icon"><i class="far fa-bookmark"></i></span> ')
+      var cardCont = $('<div class = "card-content">  <div class = "row title-row"> <h6 class=" col s9 card-title truncate">' + title + '</h6>  <div class ="col s3 bookmarks"> <span class="icon"><i class="far fa-bookmark"></i></span> ')
       var cardDesc = $('<p class = "">' + item.snippet.description + '</p>');
       cardCont.append(cardDesc);
-      var cardAction = $('<div class = "card-action"> <a href ="https://www.youtube.com/watch?v=' + item.id.videoId + '/"> This is a Link </a>');
+      var cardAction = $('<div class = "card-action center-align"> <a class ="btn purple darken-3" href ="https://www.youtube.com/watch?v=' + item.id.videoId + '/"> View Tutorial </a>');
 
 
 
@@ -128,7 +128,7 @@ function handleSearchFormSubmit(event) {
   }
   // Make API call
   searchApi(searchValue);
-  searchVApi(searchValue);
+  searchVApi("coding" + searchValue);
 }
 
 // Bookmark event listener 
@@ -170,7 +170,12 @@ pageContainer.on('click', '.icon', function (event) {
       });
     } else {
       bookmarks.push({
-        type: 'video'
+        type: 'video',
+        vTitle: videoTitle,
+        vId: videoId,
+        vDesc: videoDescription,
+
+
       });
     }
 
@@ -180,6 +185,7 @@ pageContainer.on('click', '.icon', function (event) {
       var getMatchingIndex = bookmarks.findIndex(x => x.qTitle === questionQuestion);
 
     } else {
+      getMatchingIndex = bookmarks.findIndex(x => x.vTitle === videoTitle);
       //  TODO: Return matching video from bookmarks array
     }
     // Remove bookmark object that was clicked from array
