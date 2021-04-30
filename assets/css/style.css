@@ -48,9 +48,9 @@ input[type=text].browser-default {
 
 input.full-width{
   display: block;
-  width: 96%;
+  width: 60%;
   font-size: 1.5rem;
-  margin: 2%;
+  margin: 2% auto;
 }
 
 .btn{
@@ -97,6 +97,7 @@ input.full-width{
   background: rgb(200,32,144);
   background: linear-gradient(90deg, rgba(200,32,144,1), rgba(106,20,209,1));
   width: auto;
+  max-width: inherit;
 }
 
 .card.results-card{
@@ -166,6 +167,10 @@ input.full-width{
 .side-container span{
     display: block;
     padding-top: 5px;
+}
+
+.site-container nav {
+  background: linear-gradient(90deg, rgba(200,32,144,1), rgba(106,20,209,1));
 }
 
 .icon, .icon .fa-bookmark {
@@ -240,7 +245,7 @@ input.full-width{
   color: white;
   padding: 20px;
   background: rgb(200,32,144);
-  background: linear-gradient(55deg, rgba(200,32,144,1) 3%, rgba(106,20,209,1) 100%);
+  background: linear-gradient(90deg, rgba(200,32,144,1), rgba(106,20,209,1));
 }
 
 .github-link {
@@ -254,4 +259,3 @@ input.full-width{
       padding: 5rem 25%;
   }
 }
-
