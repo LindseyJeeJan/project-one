@@ -143,7 +143,6 @@ function init() {
     if (storedBookmarks.length !== 0) {
         bookmarks = storedBookmarks;
     } 
-    console.log('bookmarks', bookmarks);
     // render bookmarks to the page
    renderBookmarks();
 }
