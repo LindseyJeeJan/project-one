@@ -82,8 +82,14 @@ pageContainer.on('click', '.icon', function(event){
 
 //Write bookmarks from storage to the page
 function renderBookmarks() {
+    // If no bookmarks are in memory, show no Bookmarks message
+    if (bookmarks.length === 0){
+      showNoBookmarksMessage();
+    }
+
      // TODO: First clear the display 
-      $('.results-card').remove();
+    $('.results-card').parent('.col').remove();
+
       // Get search phrases from the array of objects and print them onto the page
     for (var i = 0; i < bookmarks.length; i++) {
         var bookmark = bookmarks[i];
@@ -124,17 +130,20 @@ function renderBookmarks() {
 // Search form submit event
 searchForm.on('submit', handleSearchFormSubmit);
 
+function showNoBookmarksMessage() {
+    var bookmarkMessage = $('<h5/>');
+    bookmarkMessage.text('No bookmarks.');
+    bookmarkContainer.append(bookmarkMessage);
+}
+
 function init() {
     // Get bookmarks from localStorage
     var storedBookmarks = JSON.parse(localStorage.getItem('bookmarks'));
     // If bookmarks exist in localStorage, update the bookmarks array
     if (storedBookmarks.length !== 0) {
         bookmarks = storedBookmarks;
-    } else {
-      var bookmarkMessage = $('<h5/>');
-      bookmarkMessage.text('No bookmarks exist.');
-      bookmarkContainer.append(bookmarkMessage);
-    }
+    } 
+    console.log('bookmarks', bookmarks);
     // render bookmarks to the page
    renderBookmarks();
 }
