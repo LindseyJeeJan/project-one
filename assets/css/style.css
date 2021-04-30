@@ -21,9 +21,13 @@ main {
 }
 
 /* ID Styles */
-#site-description,
-#suggested-tutorials-container {
+#site-description {
   padding: 5rem;
+  background-color: #ebebeb;
+}
+
+#suggested-tutorials-container {
+  padding: 3rem;
   background-color: #ebebeb;
 }
 
@@ -36,7 +40,7 @@ main {
 }
 
 #videos-container {
-  padding: 3rem 10%;
+  padding: 2rem 10%;
 }
 
 /* Class styles */
@@ -266,6 +270,10 @@ input.full-width {
 
 /* Video API */
 
+.card .card-content {
+  padding-top: 10px;
+}
+
 .title-row {
   display: flex;
   align-items: center;
@@ -284,6 +292,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 5px;
 }
 
 .footer {
