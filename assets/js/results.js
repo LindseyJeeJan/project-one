@@ -149,10 +149,19 @@ pageContainer.on('click', '.icon', function(event){
     
     //  push to local storage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-
 });
 
 // Search form submit event listener
 searchForm.on('submit', handleSearchFormSubmit);
 
-getParametersFromURL();
+function init(){
+  // Get schedule from localStorage
+    var storedBookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+    // If schedule appointments were retrieved from localStorage, update the scheduling object to it
+    if (storedBookmarks !== null) {
+        bookmarks = storedBookmarks;
+    }
+     getParametersFromURL();
+}
+
+init();
