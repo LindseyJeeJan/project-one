@@ -44,7 +44,7 @@ function renderArticleResultsCards(results){
             // Format the date created
             var createDateFormatted = moment.unix(createDate).format("MM/DD/YYYY");
             // Render HTML elements to display 
-            var questionHeader = $('<h5/>').text('Question');
+            var questionHeader = $('<h5/>');
             var questionCard = $('<div class="card results-card card-question" />');
             var questionContainer = $('<span class="card-title" />');
             var createDateContainer = $('<span class="create-date" />');
@@ -58,7 +58,7 @@ function renderArticleResultsCards(results){
             var div2 = $('<div />');
             var div3 = $('<div />');
             //  Put data into the elements
-            questionContainer.text(question);
+            questionHeader.text(question);
             linkButton.text('View').attr('href', link);
             answersContainer.text('Answers');
             answersNumber.text(answers)

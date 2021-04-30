@@ -57,6 +57,7 @@ pageContainer.on('click', '.icon', function(event){
             });
         } else {
            bookmarks.push({
+             //  TODO: Add matching video into bookmarks array
                type: 'video'
             });
         } 
@@ -67,6 +68,7 @@ pageContainer.on('click', '.icon', function(event){
           var getMatchingIndex = bookmarks.findIndex(x => x.qTitle === questionQuestion);
         } else {
           //  TODO: Return matching video from bookmarks array
+
         }
         // Remove bookmark object that was clicked from array
         if (getMatchingIndex > -1) {
@@ -100,7 +102,7 @@ function renderBookmarks() {
             var link = bookmark.qUrl;
             var createDate = bookmark.qDate;
 
-            var questionHeader = $('<h5/>').text('Question');
+            var questionHeader = $('<h5/>').text('Stack Overflow Post');
             var questionCard = $('<div class="card results-card card-question medium" />');
             var questionContainer = $('<span class="card-title" />');
             var createDateContainer = $('<span class="create-date" />');
@@ -109,14 +111,14 @@ function renderBookmarks() {
             var divWrapper = $('<div class="col s12 m4"/>');
             var div1 = $('<div class="image-holder" />');
             var div2 = $('<div />');
-            var div3 = $('<div />');
+            var div3 = $('<div class="card-content" />');
             //  Put data into the elements
             questionContainer.text(question);
             linkButton.text('View').attr('href', link);
             createDateContainer.text(createDate);
             //  Create structure
             div2.append(favoriteIcon).append(questionHeader);
-            div3.append(createDateContainer).append(questionContainer);
+            div3.append(questionContainer).append(createDateContainer);
             questionCard.append(div2).append(div1).append(div3).append(linkButton);
             divWrapper.append(questionCard);
             //  Assemble card
@@ -143,7 +145,6 @@ function init() {
     if (storedBookmarks.length !== 0) {
         bookmarks = storedBookmarks;
     } 
-    console.log('bookmarks', bookmarks);
     // render bookmarks to the page
    renderBookmarks();
 }

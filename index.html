@@ -9,27 +9,31 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <title></title>
+  <title>Study Buddy</title>
 </head>
 
 <body>
   <main>
     <div id="site-container" class="site-container">
-      <nav class="nav purple darken-3 p-2">
-        <a id="bookmark-panel" href="#bookmarks" class="btn black-text purple lighten-5 big-search">
-          <i class="fas fa-bookmark"></i><span> Bookmarks</span>
-        </a>
+      <nav class="nav p-2">
+        <span><i class="fab fa-earlybirds"></i>
+          <span class="logo">Study Buddy</span>
+        </span>
+        <span class="right-align">
+          <a href="#bookmarks" class="btn black-text purple lighten-5 big-search"><i class="fas fa-bookmark"></i></a>
+        </span>
       </nav>
 
       <div class="container">
         <div class="col s12">
           <h2 class="center-align" style="color:white;">Your one stop shop for your coding needs</h2>
           <form class="landing-search" id="search-form">
-            <input id="search-input" autocomplete="" type="text" class="browser-default full-width" placeholder="Search">
+            <input id="search-input" autocomplete="off" type="text" class="browser-default full-width" placeholder="Search">
             <button class="btn black-text purple lighten-5 big-search">Search</button>
           </form>
         </div>
@@ -38,12 +42,10 @@
       <!-- Info Cards -->
       <div id="site-description">
         <div class="row">
-          <!--  <h1 class="about-header">The one stop shop for your coding needs.</h1>
-            <p class="about-text">WEBSITE NAME provides you the best answers for your coding problems!</p>
-            <p class="about-text">Simply just search, and WEBSITE NAME will give you the best solutions and video tutorials.</p> -->
+
           <div class="col s12 m4">
             <div class="center-align">
-              <i class="material-icons md-48">
+              <i class="material-icons md-48">code</i>
               <h4 class="center-align"> Code </h4>
               <p class="light center"> Get the top solutions for your codeing questions</p>
             </div>
@@ -52,8 +54,7 @@
 
           <div class="col s12 m4">
             <div class="center-align">
-              <i class="material-icons md-48">
-                code</i>
+              <i class="material-icons md-48">code</i>
               <h4 class="center-align"> Tutorials </h4>
               <p class="light center"> Watch video tutorials instantly!</p>
             </div>
@@ -61,11 +62,10 @@
 
           <div class="col s12 m4">
             <div class="center-align">
-              <i class="material-icons md-48">
-                code</i>
+              <i class="material-icons md-48">code</i>
               <h4 class="center-align"> Bookmarks </h4>
               <p class="light center"> Never lose a solution with our bookmarking feature!</p>
-           
+
 
             </div>
           </div>
@@ -78,60 +78,8 @@
 
       <!-- Bookmark Cards -->
       <div class="bookmarks" id="bookmarks">
+        <h3 class="center-align">Bookmarks</h3>
         <div class="row">
-
-          <!-- <div class="col s12 m4">
-            <div class="card medium">
-              <div class="video-container">
-                <iframe src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
-              </div>
-
-              <div class="card-content">
-                <h4 class="card-title">Card Title</h4>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="col s12 m4">
-            <div class="card medium">
-              <div class="video-container">
-                <iframe src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
-              </div>
-
-              <div class="card-content">
-                <h4 class="card-title">Card Title</h4>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col s12 m4">
-            <div class="card medium">
-              <div class="video-container">
-                <iframe src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
-              </div>
-
-              <div class="card-content">
-                <h4 class="card-title">Card Title</h4>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div> -->
-
 
 
         </div>
@@ -148,7 +96,6 @@
 
 
   </main>
-  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
