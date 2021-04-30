@@ -2,8 +2,14 @@ var pageContainer = $('#site-container');
 var searchForm = $('#search-form');
 var bookmarkContainer = $('#bookmarks .row');
 var body = $('body');
+var homeLink = $('nav a');
+var redirectUrl = './index.html';
 
 var bookmarks = [];
+
+homeLink.on('click', function(){
+  document.location = redirectUrl;
+});
 
 // Send search field contents to results page in the URL
 function handleSearchFormSubmit(event) {
