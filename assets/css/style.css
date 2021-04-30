@@ -2,8 +2,7 @@
   --borderRadius: 20px;
 }
 /* Element styles */
-body,
-main {
+body {
   height: 100%;
 }
 
@@ -11,7 +10,8 @@ button {
   transition: background-color 0.1s ease-out;
 }
 
-button, button > * {
+button,
+button > * {
   cursor: pointer;
 }
 
@@ -21,8 +21,13 @@ main {
 }
 
 /* ID Styles */
-#site-description, #suggested-tutorials-container {
+#site-description {
   padding: 5rem;
+  background-color: #ebebeb;
+}
+
+#suggested-tutorials-container {
+  padding: 3rem;
   background-color: #ebebeb;
 }
 
@@ -30,8 +35,12 @@ main {
   padding: 5rem;
 }
 
-#results-container{
-    padding: 5rem 15%;
+#results-container {
+  padding: 5rem 15%;
+}
+
+#videos-container {
+  padding: 2rem 10%;
 }
 
 /* Class styles */
@@ -40,24 +49,24 @@ main {
   font-size: 3rem;
 }
 
-input[type=text].browser-default {
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: var(--borderRadius);
+input[type="text"].browser-default {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: var(--borderRadius);
 }
 
-input.full-width{
+input.full-width {
   display: block;
   width: 60%;
   font-size: 1.5rem;
   margin: 2% auto;
 }
 
-.btn{
-   border-radius: var(--borderRadius);
+.btn {
+  border-radius: var(--borderRadius);
 }
 
-.landing-search{
+.landing-search {
   text-align: center;
 }
 
@@ -66,115 +75,150 @@ input.full-width{
   justify-content: flex-end;
 }
 
-.site-container{
-    flex: 1 1 0;
-    height: 100%;
-    /*background: rgb(200,32,144);
-    background: linear-gradient(55deg, rgba(200,32,144,1) 3%, rgba(106,20,209,1) 100%);*/
+.site-container {
+  flex: 1 1 0;
+  height: 100%;
+}
+
+.site-container nav {
+  background: linear-gradient(
+    90deg,
+    rgba(200, 32, 144, 1),
+    rgba(106, 20, 209, 1)
+  );
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+
+.site-container nav a,
+.site-container nav a > * {
+  cursor: pointer;
+}
+
+.fa-earlybirds {
+  font-size: 3rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-family: "Rock Salt", Arial, Helvetica, sans-serif;
 }
 
 .container {
   padding-top: 1rem;
   padding-bottom: 2rem;
-  background: rgb(200,32,144);
-  background: linear-gradient(90deg, rgba(200,32,144,1), rgba(106,20,209,1));
+  background: rgb(200, 32, 144);
+  background: linear-gradient(
+    90deg,
+    rgba(200, 32, 144, 1),
+    rgba(106, 20, 209, 1)
+  );
   width: auto;
   max-width: inherit;
 }
 
-.card.results-card{
-    border: 1px solid #000;
-    text-align: right;
-    padding: 10px;
+.card.results-card {
+  border: 1px solid #000;
+  text-align: right;
+  padding: 10px;
 }
 
-.card.results-card .card-title, .create-date{
-    font-size: 1rem;
-    line-height: 1.4;
-    display: block;
-    text-align: center;
+.card.results-card .card-title,
+.create-date {
+  font-size: 1rem;
+  line-height: 1.4;
+  display: block;
+  text-align: center;
 }
 
 .card.results-card {
-    display: flex;
-    align-content: stretch;
-    justify-content: space-between;
-    padding: 10px;
+  display: flex;
+  align-content: stretch;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .bookmarks .card.results-card {
   flex-direction: column;
 }
 
-.bookmarks .card.medium{
-    height: auto;
-    min-height: 400px;
+.card.results-card div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card.results-card div:last-child{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;  
+.card.results-card h5 {
+  text-align: center;
+  margin-top: 0;
+  padding: 0 100px;
 }
 
-.card.results-card h5{
-    text-align: center;
-    margin-top: 0;
+.bookmarks .card.results-card h5 {
+  padding: 0;
 }
 
 .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.create-date{
-    font-weight: bold;
-    line-height: 1.8;
+.create-date {
+  line-height: 1.8;
+  font-size: 1.2rem;
+  color: #666;
 }
 
 .side-container {
-    font-size: 1rem;
-    text-align: center;
-    float: left;
-    clear: left;
-    background: #f0f0f0;
-    width: 70px;
-    height: 60px;
-    vertical-align: middle;
-    margin-bottom: 1px;
-    border-radius: 0 6px 6px 0;
-    margin-left: -10px;
-    padding: 10px 0;
+  font-size: 1rem;
+  text-align: center;
+  float: left;
+  clear: left;
+  color: #fff;
+  background: rgb(200, 32, 144);
+  width: 70px;
+  height: 60px;
+  vertical-align: middle;
+  margin-bottom: 1px;
+  border-radius: 0 6px 6px 0;
+  margin-left: -10px;
+  padding: 10px 0;
 }
 
-.side-container span{
-    display: block;
-    padding-top: 5px;
+.side-container span {
+  display: block;
+  padding-top: 5px;
 }
 
 .site-container nav {
-  background: linear-gradient(90deg, rgba(200,32,144,1), rgba(106,20,209,1));
+  background: linear-gradient(
+    90deg,
+    rgba(200, 32, 144, 1),
+    rgba(106, 20, 209, 1)
+  );
 }
 
-.icon, .icon .fa-bookmark {
-    font-size: 1.8rem;
-    cursor: pointer;
+.icon,
+.icon .fa-bookmark {
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
-.icon{
-   align-self: flex-end;
+.icon {
+  align-self: flex-end;
 }
 
-.bookmarks .icon{
+.bookmarks .icon {
   float: right;
 }
 
-.image-holder{
-  background: #fff url('../images/stackoverflow.png') no-repeat center center;
-  min-height: 200px;
+.image-holder {
+  background: #fff url("../images/stackoverflow.png") no-repeat center center;
+  min-height: 150px;
   width: 100%;
-  background-size: contain;
+  background-size: cover;
 }
 
 .p-1 {
@@ -224,12 +268,43 @@ input.full-width{
   padding: 20px;
 }
 
+/* Video API */
+
+.card .card-content {
+  padding-top: 10px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+  line-height: 20px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
 .footer {
   text-align: center;
   color: white;
   padding: 20px;
-  background: rgb(200,32,144);
-  background: linear-gradient(90deg, rgba(200,32,144,1), rgba(106,20,209,1));
+  background: rgb(200, 32, 144);
+  background: linear-gradient(
+    90deg,
+    rgba(200, 32, 144, 1),
+    rgba(106, 20, 209, 1)
+  );
 }
 
 .github-link {
@@ -239,7 +314,7 @@ input.full-width{
 
 /* Media queries */
 @media screen and (min-width: 1100px) {
-  #results-container{
-      padding: 5rem 25%;
+  #results-container {
+    padding: 5rem 25%;
   }
 }
