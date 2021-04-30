@@ -136,6 +136,10 @@ input.full-width{
     padding: 0 100px;
 }
 
+.bookmarks .card.results-card h5{
+    padding: 0;
+}
+
 .card-header {
     display: flex;
     justify-content: space-between;
