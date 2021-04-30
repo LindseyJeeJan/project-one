@@ -77,7 +77,7 @@ input.full-width{
   padding-top: 1rem;
   padding-bottom: 2rem;
   background: rgb(200,32,144);
-  background: linear-gradient(55deg, rgba(200,32,144,1) 3%, rgba(106,20,209,1) 100%);
+  background: linear-gradient(90deg, rgba(200,32,144,1), rgba(106,20,209,1));
   width: auto;
   max-width: inherit;
 }
@@ -153,6 +153,10 @@ input.full-width{
     padding-top: 5px;
 }
 
+.site-container nav {
+  background: linear-gradient(90deg, rgba(200,32,144,1), rgba(106,20,209,1));
+}
+
 .icon, .icon .fa-bookmark {
     font-size: 1.8rem;
     cursor: pointer;
@@ -225,7 +229,7 @@ input.full-width{
   color: white;
   padding: 20px;
   background: rgb(200,32,144);
-  background: linear-gradient(55deg, rgba(200,32,144,1) 3%, rgba(106,20,209,1) 100%);
+  background: linear-gradient(90deg, rgba(200,32,144,1), rgba(106,20,209,1));
 }
 
 .github-link {
@@ -238,8 +242,4 @@ input.full-width{
   #results-container{
       padding: 5rem 25%;
   }
-}
-
-.results-page-header {
-  justify-content: flex-start;
 }
