@@ -128,7 +128,7 @@ function handleSearchFormSubmit(event) {
   }
   // Make API call
   searchApi(searchValue);
-  searchVApi(searchValue);
+  searchVApi("coding" + searchValue);
 }
 
 // Bookmark event listener 
@@ -170,7 +170,12 @@ pageContainer.on('click', '.icon', function (event) {
       });
     } else {
       bookmarks.push({
-        type: 'video'
+        type: 'video',
+        vTitle: videoTitle,
+        vId: videoId,
+        vDesc: videoDescription,
+
+
       });
     }
 
@@ -180,6 +185,7 @@ pageContainer.on('click', '.icon', function (event) {
       var getMatchingIndex = bookmarks.findIndex(x => x.qTitle === questionQuestion);
 
     } else {
+      getMatchingIndex = bookmarks.findIndex(x => x.vTitle === videoTitle);
       //  TODO: Return matching video from bookmarks array
     }
     // Remove bookmark object that was clicked from array
