@@ -69,15 +69,33 @@ input.full-width{
 .site-container{
     flex: 1 1 0;
     height: 100%;
-    /*background: rgb(200,32,144);
-    background: linear-gradient(55deg, rgba(200,32,144,1) 3%, rgba(106,20,209,1) 100%);*/
+}
+
+.site-container nav {
+    background: linear-gradient(90deg, rgba(200,32,144,1), rgba(106,20,209,1));
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+}
+
+.site-container nav a, .site-container nav a > * {
+  cursor: pointer;
+}
+
+.fa-earlybirds{
+  font-size: 3rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-family: 'Rock Salt', Arial, Helvetica, sans-serif;
 }
 
 .container {
   padding-top: 1rem;
   padding-bottom: 2rem;
   background: rgb(200,32,144);
-  background: linear-gradient(55deg, rgba(200,32,144,1) 3%, rgba(106,20,209,1) 100%);
+  background: linear-gradient(90deg, rgba(200,32,144,1), rgba(106,20,209,1));
   width: auto;
 }
 
@@ -105,11 +123,6 @@ input.full-width{
   flex-direction: column;
 }
 
-.bookmarks .card.medium{
-    height: auto;
-    min-height: 400px;
-}
-
 .card.results-card div:last-child{
     display: flex;
     flex-direction: column;
@@ -119,6 +132,7 @@ input.full-width{
 .card.results-card h5{
     text-align: center;
     margin-top: 0;
+    padding: 0 100px;
 }
 
 .card-header {
@@ -128,8 +142,9 @@ input.full-width{
 }
 
 .create-date{
-    font-weight: bold;
-    line-height: 1.8;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  color: #666;
 }
 
 .side-container {
@@ -137,7 +152,8 @@ input.full-width{
     text-align: center;
     float: left;
     clear: left;
-    background: #f0f0f0;
+    color: #fff;
+    background: rgb(200,32,144);
     width: 70px;
     height: 60px;
     vertical-align: middle;
@@ -167,9 +183,9 @@ input.full-width{
 
 .image-holder{
   background: #fff url('../images/stackoverflow.png') no-repeat center center;
-  min-height: 200px;
+  min-height: 150px;
   width: 100%;
-  background-size: contain;
+  background-size: cover;
 }
 
 .p-1 {
