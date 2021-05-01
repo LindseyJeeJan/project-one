@@ -276,7 +276,7 @@ input.full-width {
 /* Video API */
 
 .card .card-content {
-  padding-top: 10px;
+  padding: 10px;
 }
 
 .card .card-content .card-title {
