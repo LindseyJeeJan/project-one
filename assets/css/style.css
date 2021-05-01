@@ -317,6 +317,12 @@ p {
   font-size: large;
 }
 
+.btn{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Media queries */
 @media screen and (max-width: 767px) {
   .logo, .fa-earlybirds{
@@ -328,7 +334,7 @@ p {
     padding: 1rem;
   }
 
-  #suggested-tutorials-container{
+  #suggested-tutorials-container, #bookmarks{
     padding: 0;
   }
 }
