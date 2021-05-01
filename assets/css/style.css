@@ -22,7 +22,7 @@ main {
 
 /* ID Styles */
 #site-description {
-  padding: 5rem;
+  padding: 4rem 7rem;
   background-color: #ebebeb;
 }
 
@@ -117,7 +117,7 @@ input.full-width {
   max-width: inherit;
 }
 
-.results-page  .card.results-card {
+.results-page .card.results-card {
   border: 1px solid #000;
   text-align: right;
   padding: 10px;
@@ -131,14 +131,14 @@ input.full-width {
   text-align: center;
 }
 
-.results-page  .card.results-card {
+.results-page .card.results-card {
   display: flex;
   align-content: stretch;
   justify-content: space-between;
   padding: 10px;
 }
 
-.results-page  .bookmarks .card.results-card {
+.results-page .bookmarks .card.results-card {
   flex-direction: column;
 }
 
@@ -218,12 +218,12 @@ input.full-width {
 }
 
 .image-holder {
-    background: #fff url(../images/stackoverflow.png) no-repeat center center;
-    background-size: cover;
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
+  background: #fff url(../images/stackoverflow.png) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
 }
 
 .p-1 {
@@ -279,6 +279,10 @@ input.full-width {
   padding-top: 10px;
 }
 
+.card .card-content .card-title {
+  margin-bottom: 0px;
+}
+
 .title-row {
   display: flex;
   align-items: center;
@@ -286,11 +290,18 @@ input.full-width {
 }
 
 h4 {
-  font-size: 18px;
+  margin: 25px 7px;
 }
 
 p {
   line-height: 20px;
+}
+
+p.info {
+  font-size: 18px;
+  margin: 15px;
+  line-height: 23px;
+  padding: 5px 20px;
 }
 
 .title-row {
@@ -325,12 +336,14 @@ p {
 
 /* Media queries */
 @media screen and (max-width: 767px) {
-  .logo, .fa-earlybirds{
+  .logo,
+  .fa-earlybirds {
     font-size: 2rem;
     white-space: nowrap;
   }
 
-  .card.results-card h5, #results-container{
+  .card.results-card h5,
+  #results-container {
     padding: 1rem;
   }
 

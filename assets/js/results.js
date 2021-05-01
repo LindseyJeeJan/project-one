@@ -14,7 +14,7 @@ function getParametersFromURL() {
   var query = searchParamsArr[1].split('=').pop();
   // Make API call 
   searchApi(query);
-  searchVApi(query); //Video API
+  searchVApi("coding" + query); //Video API
 }
 
 function searchApi(queryTerms) {
@@ -156,7 +156,7 @@ pageContainer.on('click', '.icon', function (event) {
   } else {
     var videoTitle = card.find('.card-title').text();
     var videoId = card.find('.card-action a').attr('href');
-     // Get the video ID out of the URL 
+    // Get the video ID out of the URL 
     var videoId = videoId.split('=');
     var vidId = videoId[1];
     var videoDescription = card.find('.card-content p').text();
