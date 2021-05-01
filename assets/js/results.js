@@ -46,6 +46,15 @@ function renderArticleResultsCards(results) {
     var createDate = results.items[i].creation_date;
     // Format the date created
     var createDateFormatted = moment.unix(createDate).format("MM/DD/YYYY");
+
+        // Decode text strings coming from the array
+    var decodeHTML = function (question) {
+      var txt = document.createElement('textarea');
+      txt.innerHTML = question;
+      return txt.value;
+    };
+
+    question = decodeHTML(question);
     // Render HTML elements to display 
     var questionHeader = $('<h5/>');
     var questionCard = $('<div class="card results-card card-question" />');

@@ -108,6 +108,15 @@ function renderBookmarks() {
             var link = bookmark.qUrl;
             var createDate = bookmark.qDate;
 
+            // Decode text strings coming from the array
+            var decodeHTML = function (question) {
+              var txt = document.createElement('textarea');
+              txt.innerHTML = question;
+              return txt.value;
+            };
+
+            question = decodeHTML(question);
+
             var questionHeader = $('<h5/>').text('Stack Overflow Post');
             var questionCard = $('<div class="card results-card card-question medium" />');
             var questionContainer = $('<span class="card-title" />');
