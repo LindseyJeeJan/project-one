@@ -44,11 +44,14 @@ pageContainer.on('click', '.icon', function(event){
 
     if (isQuestion){
       var questionDate = card.find('.create-date').text();
-      var questionQuestion = card.find('.card-title').text();
+      var questionQuestion = card.find('.card-real-title').text();
       var questionURL = card.find('a.btn').attr('href');
       var questionAnswers = card.find('.answers').text();
       var questionViews = card.find('.views').text();
+    } else {
+        var videoTitle = card.find('.card-title').text();
     }
+     
 
     if (!isBookmark) {
         // Add item to array
@@ -63,8 +66,10 @@ pageContainer.on('click', '.icon', function(event){
             });
         } else {
            bookmarks.push({
-             //  TODO: Add matching video into bookmarks array
-               type: 'video'
+                type: 'video',
+                vTitle: videoTitle,
+                vId: vidId,
+                vDesc: videoDescription
             });
         } 
 
@@ -73,8 +78,8 @@ pageContainer.on('click', '.icon', function(event){
           // Return matching object from array bookmarks, get its index
           var getMatchingIndex = bookmarks.findIndex(x => x.qTitle === questionQuestion);
         } else {
-          //  TODO: Return matching video from bookmarks array
-
+          //  Return matching video from bookmarks array
+          var getMatchingIndex = bookmarks.findIndex(x => x.vTitle === videoTitle);
         }
         // Remove bookmark object that was clicked from array
         if (getMatchingIndex > -1) {
@@ -94,10 +99,9 @@ function renderBookmarks() {
     if (bookmarks.length === 0){
       showNoBookmarksMessage();
     }
-
-     // TODO: First clear the display 
+     // First clear the display 
     $('.results-card').parent('.col').remove();
-
+    $('.video-results').parent('.col').remove();
       // Get search phrases from the array of objects and print them onto the page
     for (var i = 0; i < bookmarks.length; i++) {
         var bookmark = bookmarks[i];
@@ -116,29 +120,42 @@ function renderBookmarks() {
             };
 
             question = decodeHTML(question);
-
-            var questionHeader = $('<h5/>').text('Stack Overflow Post');
-            var questionCard = $('<div class="card results-card card-question medium" />');
-            var questionContainer = $('<span class="card-title" />');
+            
+            var questionCard = $('<div class="card results-card card-question medium hoverable" />');
+            var questionHeader = $('<h6 class=" col s9 card-title truncate"/>').text('Stack Overflow Post');
+            var questionHeaderContainerContainer = $('<div class="card-content" />');
+            var questionHeaderContainer = $('<div class="row title-row" />');
+            var questionContainer = $('<p class="card-real-title" />');
             var createDateContainer = $('<span class="create-date" />');
             var linkButton = $('<a class="btn purple darken-3" target="_blank" />');
-            var favoriteIcon = $('<span class="icon"><i class="fas fa-bookmark"></i></span>');
+            var favoriteIcon = $('<div class="col s3 bookmarks"><span class="icon"><i class="fas fa-bookmark"></i></span></div>');
             var divWrapper = $('<div class="col s12 m4"/>');
             var div1 = $('<div class="image-holder" />');
-            var div2 = $('<div />');
-            var div3 = $('<div class="card-content" />');
+            var div4 = $('<div class="card-action center-align" />');
             //  Put data into the elements
             questionContainer.text(question);
-            linkButton.text('View').attr('href', link);
+            linkButton.text('View Question').attr('href', link);
             createDateContainer.text(createDate);
             //  Create structure
-            div2.append(favoriteIcon).append(questionHeader);
-            div3.append(questionContainer).append(createDateContainer);
-            questionCard.append(div2).append(div1).append(div3).append(linkButton);
+            questionHeaderContainer.append(questionHeader).append(favoriteIcon);
+            questionHeaderContainerContainer.append(questionHeaderContainer).append(questionContainer).append(createDateContainer);
+            div4.append(linkButton);
+            questionCard.append(div1).append(questionHeaderContainerContainer).append(div4);
             divWrapper.append(questionCard);
             //  Assemble card
             bookmarkContainer.append(divWrapper);
         } else {
+            var vidCard = $('<div class = "col s12 m4 l4" />');
+            var sizeCard = $('<div class = "card medium hoverable video-results" />');
+            var vidCont = $('<div class = "video-container"> <iframe width ="420" height ="315"src="https://www.youtube.com/embed/' + bookmark.vId + '/frameborder="0" allowfullscreen></iframe> ');
+            var cardCont = $('<div class = "card-content">  <div class = "row title-row"> <h6 class=" col s9 card-title truncate">' + bookmark.vTitle + '</h6>  <div class ="col s3 bookmarks"> <span class="icon"><i class="fas fa-bookmark"></i></span> ')
+            var cardDesc = $('<p class = "video-description">' + bookmark.vDesc + '</p>');
+            cardCont.append(cardDesc);
+            var cardAction = $('<div class = "card-action center-align"> <a class ="btn purple darken-3" target="_blank" href ="https://www.youtube.com/watch?v=' + bookmark.vId + '/"> View Tutorial </a>');
+
+            bookmarkContainer.append(vidCard);
+            vidCard.append(sizeCard);
+            sizeCard.append(vidCont, cardCont, cardAction);
 
         }
     }   

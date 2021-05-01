@@ -47,7 +47,7 @@ function renderArticleResultsCards(results) {
     // Format the date created
     var createDateFormatted = moment.unix(createDate).format("MM/DD/YYYY");
 
-        // Decode text strings coming from the array
+    // Decode text strings coming from the array
     var decodeHTML = function (question) {
       var txt = document.createElement('textarea');
       txt.innerHTML = question;
@@ -89,15 +89,10 @@ function renderArticleResultsCards(results) {
   }
 }
 
-
 //Tutorial YouTube API 
-
-
 function searchVApi(queryTerms) {
   $("#videos-container").empty()
   $.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=' + queryTerms + '&key=AIzaSyDfwUr06BwJXQcP1lmtgVxsef7OrLreKgs&type=video', function (data) {
-    console.log(data)
-
 
     data.items.forEach(item => {
 
@@ -112,15 +107,9 @@ function searchVApi(queryTerms) {
       cardCont.append(cardDesc);
       var cardAction = $('<div class = "card-action center-align"> <a class ="btn purple darken-3" href ="https://www.youtube.com/watch?v=' + item.id.videoId + '/"> View Tutorial </a>');
 
-
-
-
-
       videoContainer.append(vidCard);
       vidCard.append(sizeCard);
       sizeCard.append(vidCont, cardCont, cardAction);
-
-
 
     })
   })
@@ -160,10 +149,17 @@ pageContainer.on('click', '.icon', function (event) {
 
   if (isQuestion) {
     var questionDate = card.find('.create-date').text();
-    var questionQuestion = card.find('.card-title').text();
+    var questionQuestion = card.find('h5').text();
     var questionURL = card.find('a.btn').attr('href');
     var questionAnswers = card.find('.answers').text();
     var questionViews = card.find('.views').text();
+  } else {
+    var videoTitle = card.find('.card-title').text();
+    var videoId = card.find('.card-action a').attr('href');
+     // Get the video ID out of the URL 
+    var videoId = videoId.split('=');
+    var vidId = videoId[1];
+    var videoDescription = card.find('.card-content p').text();
   }
 
   if (!isBookmark) {
@@ -181,10 +177,8 @@ pageContainer.on('click', '.icon', function (event) {
       bookmarks.push({
         type: 'video',
         vTitle: videoTitle,
-        vId: videoId,
-        vDesc: videoDescription,
-
-
+        vId: vidId,
+        vDesc: videoDescription
       });
     }
 
@@ -194,8 +188,8 @@ pageContainer.on('click', '.icon', function (event) {
       var getMatchingIndex = bookmarks.findIndex(x => x.qTitle === questionQuestion);
 
     } else {
-      getMatchingIndex = bookmarks.findIndex(x => x.vTitle === videoTitle);
-      //  TODO: Return matching video from bookmarks array
+      var getMatchingIndex = bookmarks.findIndex(x => x.vTitle === videoTitle);
+      //  Return matching video from bookmarks array
     }
     // Remove bookmark object that was clicked from array
     if (getMatchingIndex > -1) {
