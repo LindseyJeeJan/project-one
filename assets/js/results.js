@@ -47,7 +47,7 @@ function renderArticleResultsCards(results) {
     // Format the date created
     var createDateFormatted = moment.unix(createDate).format("MM/DD/YYYY");
 
-        // Decode text strings coming from the array
+    // Decode text strings coming from the array
     var decodeHTML = function (question) {
       var txt = document.createElement('textarea');
       txt.innerHTML = question;
@@ -96,8 +96,6 @@ function renderArticleResultsCards(results) {
 function searchVApi(queryTerms) {
   $("#videos-container").empty()
   $.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=' + queryTerms + '&key=AIzaSyDfQfEVK8-H_6dMmoC5Z94bXnuYF6A6lT8&type=video', function (data) {
-    console.log(data)
-
 
     data.items.forEach(item => {
 
@@ -112,15 +110,9 @@ function searchVApi(queryTerms) {
       cardCont.append(cardDesc);
       var cardAction = $('<div class = "card-action center-align"> <a class ="btn purple darken-3" href ="https://www.youtube.com/watch?v=' + item.id.videoId + '/"> View Tutorial </a>');
 
-
-
-
-
       videoContainer.append(vidCard);
       vidCard.append(sizeCard);
       sizeCard.append(vidCont, cardCont, cardAction);
-
-
 
     })
   })
@@ -183,8 +175,6 @@ pageContainer.on('click', '.icon', function (event) {
         vTitle: videoTitle,
         vId: videoId,
         vDesc: videoDescription,
-
-
       });
     }
 

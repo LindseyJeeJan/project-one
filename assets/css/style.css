@@ -325,6 +325,10 @@ p {
   .card.results-card h5, #results-container{
     padding: 1rem;
   }
+
+  #suggested-tutorials-container{
+    padding: 0;
+  }
 }
 
 @media screen and (min-width: 1100px) {
