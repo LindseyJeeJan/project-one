@@ -2,8 +2,14 @@ var pageContainer = $('#site-container');
 var searchForm = $('#search-form');
 var bookmarkContainer = $('#bookmarks .row');
 var body = $('body');
+var homeLink = $('nav a');
+var redirectUrl = './index.html';
 
 var bookmarks = [];
+
+homeLink.on('click', function(){
+  document.location = redirectUrl;
+});
 
 // Send search field contents to results page in the URL
 function handleSearchFormSubmit(event) {
@@ -101,6 +107,15 @@ function renderBookmarks() {
             var question = bookmark.qTitle;
             var link = bookmark.qUrl;
             var createDate = bookmark.qDate;
+
+            // Decode text strings coming from the array
+            var decodeHTML = function (question) {
+              var txt = document.createElement('textarea');
+              txt.innerHTML = question;
+              return txt.value;
+            };
+
+            question = decodeHTML(question);
 
             var questionHeader = $('<h5/>').text('Stack Overflow Post');
             var questionCard = $('<div class="card results-card card-question medium" />');
