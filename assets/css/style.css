@@ -149,6 +149,10 @@ input.full-width {
   justify-content: space-between;
 }
 
+.card.results-card div:nth-child(2) {
+  flex: 1 1 0;
+}
+
 .card.results-card h5 {
   text-align: center;
   margin-top: 0;
@@ -313,6 +317,17 @@ p {
 }
 
 /* Media queries */
+@media screen and (max-width: 767px) {
+  .logo, .fa-earlybirds{
+    font-size: 2rem;
+    white-space: nowrap;
+  }
+}
+
+.card.results-card h5, #results-container{
+  padding: 1rem;
+}
+
 @media screen and (min-width: 1100px) {
   #results-container {
     padding: 5rem 25%;
