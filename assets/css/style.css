@@ -117,13 +117,13 @@ input.full-width {
   max-width: inherit;
 }
 
-.card.results-card {
+.results-page  .card.results-card {
   border: 1px solid #000;
   text-align: right;
   padding: 10px;
 }
 
-.card.results-card .card-title,
+.results-page .card.results-card .card-title,
 .create-date {
   font-size: 1rem;
   line-height: 1.4;
@@ -131,18 +131,18 @@ input.full-width {
   text-align: center;
 }
 
-.card.results-card {
+.results-page  .card.results-card {
   display: flex;
   align-content: stretch;
   justify-content: space-between;
   padding: 10px;
 }
 
-.bookmarks .card.results-card {
+.results-page  .bookmarks .card.results-card {
   flex-direction: column;
 }
 
-.card.results-card div:last-child {
+.results-page .card.results-card div:last-child {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -218,10 +218,12 @@ input.full-width {
 }
 
 .image-holder {
-  background: #fff url("../images/stackoverflow.png") no-repeat center center;
-  min-height: 150px;
-  width: 100%;
-  background-size: cover;
+    background: #fff url(../images/stackoverflow.png) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
 }
 
 .p-1 {
