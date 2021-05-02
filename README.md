@@ -12,12 +12,12 @@ Mobile:
 Link to deployed application:
 https://lindseyjeejan.github.io/project-one/
 
-Collaborators:
-<a href="https://github.com/angelicalorraine" target="_blank">angelicalorraine</a>
-<a href="https://github.com/paulomanlapaz" target="_blank">paulomanlapaz</a>
+<h2>Contributing Developers</h2>
+<a href="https://github.com/angelicalorraine" target="_blank">angelicalorraine</a><br />
+<a href="https://github.com/paulomanlapaz" target="_blank">paulomanlapaz</a><br />
 <a href="https://github.com/xxxdigi" target="_blank">xxxdigi</a>
 
-Copyright (c)2021
+<h2>Copyright (c)2021</h2>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
