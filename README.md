@@ -1,5 +1,8 @@
 Description:
-The application provides the user with the ability to gather learning resources and coding solutions for various learning styles by connecting to StackExchange and YouTube APIs. The application provides 3 suggestions from each of the API resources. A Bookmarks feature helps the user to save their favorite content to local storage. 
+Study Buddy application was built with the developer in mind. As developers we are committed to being lifelong students to keep up with the latest technology trends. Study Buddy provides the user with the ability to gather learning resources and coding solutions for various learning styles. 
+One of the key elements of Study Buddy is our Bookmarks feature. This helps the user to keep track and save their favorite content for future reference. 
+
+The application provides the user with the ability to gather learning resources and coding solutions for various learning styles by connecting to StackExchange and YouTube APIs. The application provides 3 suggestions from each of the API resources. A Bookmarks feature helps the user to save their favorite content to local storage. This project uses Materialize, jQuery, Google fonts, Font Awesome and APIs provided by StackExchange (Stack Overflow) and YouTube. 
 
 Desktop:
 
