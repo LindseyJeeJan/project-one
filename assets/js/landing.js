@@ -152,7 +152,7 @@ function renderBookmarks() {
       var contCard = $('<div class ="card-content" />');
 
       var vidCont = $('<div class ="card-image video-container"> <iframe width ="420" height ="315"src="https://www.youtube.com/embed/' + bookmark.vId + 'frameborder="0" allowfullscreen></iframe> ');
-      var cardCont = $('<div class = "content">  <div class = "row title-row"> <h6 class=" col s9 card-title truncate">' + bookmark.vTitle + '</h6>  <div class ="col s3 bookmarks"> <span class="icon"><i class="far fa-bookmark"></i></span> ')
+      var cardCont = $('<div class = "content">  <div class = "row title-row"> <h6 class=" col s9 card-title truncate">' + bookmark.vTitle + '</h6>  <div class ="col s3 bookmarks"> <span class="icon"><i class="fas fa-bookmark"></i></span> ')
       var cardDesc = $('<p class = "">' + bookmark.vDesc + '</p>');
       var cardAction = $('<div class = "card-action center-align"> <a class ="btn purple darken-3" href ="https://www.youtube.com/watch?v=' + bookmark.vId + '/"> View Tutorial </a>');
 
