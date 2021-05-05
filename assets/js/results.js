@@ -101,15 +101,20 @@ function searchVApi(queryTerms) {
 
       var vidCard = $('<div class = "col s12 m4 l4" />');
       var sizeCard = $('<div class = "card medium hoverable video-results" />');
-      var vidCont = $('<div class = "video-container"> <iframe width ="420" height ="315"src="https://www.youtube.com/embed/' + item.id.videoId + '/frameborder="0" allowfullscreen></iframe> ');
-      var cardCont = $('<div class = "card-content">  <div class = "row title-row"> <h6 class=" col s9 card-title truncate">' + title + '</h6>  <div class ="col s3 bookmarks"> <span class="icon"><i class="far fa-bookmark"></i></span> ')
+      var contCard = $('<div class = "card-content" />');
+
+      var vidCont = $('<div class = "card-image video-container"> <iframe width ="420" height ="315"src="https://www.youtube.com/embed/' + item.id.videoId + '/frameborder="0" allowfullscreen></iframe> ');
+      var cardCont = $('<div class ="content">  <div class = "row title-row"> <h6 class=" col s9 card-title truncate">' + title + '</h6>  <div class ="col s3 bookmarks"> <span class="icon"><i class="far fa-bookmark"></i></span> ')
       var cardDesc = $('<p class = "">' + item.snippet.description + '</p>');
       cardCont.append(cardDesc);
       var cardAction = $('<div class = "card-action center-align"> <a class ="btn purple darken-3" href ="https://www.youtube.com/watch?v=' + item.id.videoId + '/"> View Tutorial </a>');
 
       videoContainer.append(vidCard);
       vidCard.append(sizeCard);
-      sizeCard.append(vidCont, cardCont, cardAction);
+      sizeCard.append(contCard);
+      contCard.append(vidCont, cardCont, cardDesc);
+      sizeCard.append(cardAction)
+
 
     })
   })
