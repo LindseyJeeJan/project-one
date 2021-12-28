@@ -92,7 +92,7 @@ function renderArticleResultsCards(results) {
 //Tutorial YouTube API 
 function searchVApi(queryTerms) {
   $("#videos-container").empty()
-  $.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=' + queryTerms + '&key=AIzaSyDfwUr06BwJXQcP1lmtgVxsef7OrLreKgs&type=video', function (data) {
+  $.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=' + queryTerms + '&key=AIzaSyCKyLbhcy475zni7uwKhjphjIUU8IEAHss&type=video', function (data) {
 
     data.items.forEach(item => {
 
